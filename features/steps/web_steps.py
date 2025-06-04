@@ -157,4 +157,8 @@ def step_impl(context, name):
         )
     )
     assert(found)
+
+@then('I should not see "{text}"')
+def step_impl(context, text):
+ assert text not in context.driver.page_source, f'Unexpectedly found "{text}" on the page.'
     
